@@ -1,0 +1,13 @@
+# Rust
+target/
+tarpaulin-report.html
+
+# Mac OS X
+.DS_Store
+
+# Environment variables
+.env
+
+# Development convenience.
+# TODO(lukesneeringer): Remove this.
+.python-version
