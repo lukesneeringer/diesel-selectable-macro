@@ -76,10 +76,10 @@ impl ToTokens for SelectableStruct {
     let meta = self
       .attrs
       .iter()
-      .find(|attr| attr.path.is_ident("table_name"))
-      .expect("The `table_name` attribute is required")
+      .find(|attr| attr.path.is_ident("table"))
+      .expect("The `table` attribute is required")
       .parse_meta()
-      .expect("Unable to parse `table_name` attribute");
+      .expect("Unable to parse `table` attribute");
     let table_name: Ident = Ident::from_meta(&meta).expect("Bad identifier");
     let table = quote! { crate::schema::#table_name::dsl::#table_name };
 

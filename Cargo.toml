@@ -1,6 +1,6 @@
 [package]
 name = "diesel-selectable-macro"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 authors = [ "Luke Sneeringer <luke@sneeringer.com>" ]
 description = "A derivable `Serialize` macro that selects precise fields."
