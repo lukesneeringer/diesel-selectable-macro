@@ -107,10 +107,15 @@ impl ToTokens for SelectableStruct {
     tokens.extend(quote! {
       #[automatically_derived]
       impl #impl_generics #ident #type_generics #where_clause {
+        /// Return a tuple of the table's fields.
+        pub fn fields() -> (#(#fields),*) {
+          (#(#fields),*)
+        }
+
         /// Construct a query object to retrieve objects from the corresponding
         /// database table.
         pub fn select() -> diesel::dsl::Select<#table, (#(#fields),*)> {
-          #table.select((#(#fields),*))
+          #table.select(Self::fields())
         }
       }
     })

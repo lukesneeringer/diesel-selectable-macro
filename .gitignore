@@ -1,13 +1,10 @@
 # Rust
 target/
 tarpaulin-report.html
+Cargo.lock
 
 # Mac OS X
 .DS_Store
 
 # Environment variables
 .env
-
-# Development convenience.
-# TODO(lukesneeringer): Remove this.
-.python-version

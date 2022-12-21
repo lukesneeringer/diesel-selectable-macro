@@ -7,7 +7,7 @@ inserts keys by name:
 use diesel::prelude::*;
 
 #[derive(Insertable)]
-#[table_name = "users"]
+#[diesel(table_name = users)]
 struct User {
   email: String,
   password_hash: String,
@@ -29,8 +29,8 @@ name is more convenient:
 use diesel::prelude::*;
 use diesel_selectable_macro::Selectable;
 
-#[derive(Selectable)]
-#[table_name = "users"]
+#[derive(Queryable, Selectable)]
+#[diesel(table_name = users)]
 struct User {
   email: String,
   password_hash: String,
